@@ -37,10 +37,6 @@ const DashboardHeader = ({ open, setOpen }: Props) => {
   };
 
   useEffect(() => {
-    audio.load();
-  }, []);
-
-  useEffect(() => {
     if (data) {
       setNotifications(
         data.notifications.filter(
@@ -51,6 +47,7 @@ const DashboardHeader = ({ open, setOpen }: Props) => {
     if (isSuccess) {
       refetch();
     }
+    audio.load();
   }, [data, isSuccess]);
 
   useEffect(() => {
